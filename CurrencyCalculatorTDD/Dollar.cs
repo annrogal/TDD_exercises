@@ -18,6 +18,11 @@ namespace CurrencyCalculatorTDD
         {
            return new Dollar(amount * multiplier);
         }
- 
+        
+        public bool AreEqual(Dollar obj)
+        {
+            Dollar dollar = obj;
+            return amount == dollar.amount;
+        }
     }
 }

@@ -7,13 +7,20 @@ namespace CurrencyCalculatorTDD.Tests
     public class UnitTest1
     {
         [TestMethod]
-        public void TestMethod1()
+        public void TestMultiplier()
         {
             Dollar five = new Dollar(5);
             Dollar product = five.Times(2);
             Assert.AreEqual(10, product.amount);
             product = five.Times(3);
             Assert.AreEqual(15, product.amount);
+        }
+
+        [TestMethod]
+        public void TestEquals()
+        {
+            Assert.IsTrue(new Dollar(5).AreEqual(new Dollar(5)));
+            Assert.IsFalse(new Dollar(5).AreEqual(new Dollar(6)));
         }
     }
 }
