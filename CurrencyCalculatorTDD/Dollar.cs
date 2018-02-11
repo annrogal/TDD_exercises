@@ -8,7 +8,7 @@ namespace CurrencyCalculatorTDD
 {
     public class Dollar
     {
-        public int amount;
+        private int amount;
         public Dollar(int amount)
         {
             this.amount = amount;
@@ -19,10 +19,15 @@ namespace CurrencyCalculatorTDD
            return new Dollar(amount * multiplier);
         }
         
-        public bool AreEqual(Dollar obj)
+        public override bool Equals(object obj)
         {
-            Dollar dollar = obj;
+            Dollar dollar = (Dollar)obj;
             return amount == dollar.amount;
         }
+
+        //public override int GetHashCode()
+        //{
+        //    return amount;
+        //}
     }
 }
