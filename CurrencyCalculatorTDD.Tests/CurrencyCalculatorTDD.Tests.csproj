@@ -51,6 +51,7 @@
     <Compile Include="DollarTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="FrancTest.cs" />
+    <Compile Include="MoneyTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

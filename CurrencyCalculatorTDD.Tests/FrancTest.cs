@@ -13,12 +13,5 @@ namespace CurrencyCalculatorTDD.Tests
             Assert.AreEqual(new Franc(10), five.Times(2));
             Assert.AreEqual(new Franc(15), five.Times(3));
         }
-
-        [TestMethod]
-        public void TestEquals()
-        {
-            Assert.IsTrue(new Franc(5).Equals(new Franc(5)));
-            Assert.IsFalse(new Franc(5).Equals(new Franc(6)));
-        }
     }
 }
