@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace CurrencyCalculatorTDD
 {
-    public class Dollar
+    public class Dollar : Money
     {
-        private int amount;
         public Dollar(int amount)
         {
             this.amount = amount;
@@ -19,12 +18,7 @@ namespace CurrencyCalculatorTDD
            return new Dollar(amount * multiplier);
         }
         
-        public override bool Equals(object obj)
-        {
-            Dollar dollar = (Dollar)obj;
-            return amount == dollar.amount;
-        }
-
+        
         //public override int GetHashCode()
         //{
         //    return amount;
