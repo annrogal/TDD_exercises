@@ -9,9 +9,9 @@ namespace CurrencyCalculatorTDD.Tests
         [TestMethod]
         public void TestDollarMultiplication()
         {
-            Dollar five = new Dollar(5);
-            Assert.AreEqual(new Dollar(10), five.Times(2));
-            Assert.AreEqual(new Dollar(15), five.Times(3));
+            Money five = Money.dollar(5);
+            Assert.AreEqual(Money.dollar(10), five.Times(2));
+            Assert.AreEqual(Money.dollar(15), five.Times(3));
         }
     }
 }

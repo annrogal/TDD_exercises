@@ -13,15 +13,10 @@ namespace CurrencyCalculatorTDD
             this.amount = amount;
         }
 
-        public Dollar Times(int multiplier)
+        public override Money Times(int multiplier)
         {
            return new Dollar(amount * multiplier);
         }
-        
-        
-        //public override int GetHashCode()
-        //{
-        //    return amount;
-        //}
+       
     }
 }

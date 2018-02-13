@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace CurrencyCalculatorTDD
 {
-    public class Money
+    public abstract class Money
     {
+        public abstract Money Times(int multiplier);
+
         protected int amount;
 
         public override bool Equals(object obj)
@@ -15,6 +17,16 @@ namespace CurrencyCalculatorTDD
             Money money = (Money)obj;
             return amount == money.amount
                 && GetType().Equals(money.GetType());
+        }
+
+        public static Money dollar(int amount)
+        {
+            return new Dollar(amount);
+        }
+
+        public static Money franc(int amount)
+        {
+            return new Franc(amount);
         }
     }
 
