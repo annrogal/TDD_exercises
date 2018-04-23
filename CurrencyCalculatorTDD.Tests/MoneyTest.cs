@@ -15,5 +15,8 @@ namespace CurrencyCalculatorTDD.Tests
             Assert.IsFalse(Money.franc(5).Equals(Money.franc(6)));
             Assert.IsFalse(Money.franc(5).Equals(Money.dollar(5)));
         }
+
+
+        
     }
 }

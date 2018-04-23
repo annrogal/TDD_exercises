@@ -6,19 +6,28 @@ using System.Threading.Tasks;
 
 namespace CurrencyCalculatorTDD
 {
-    public abstract class Money
+    public class Money
     {
-        public abstract Money Times(int multiplier);
-        public abstract string Currency();
+
+        public string Currency()
+        {
+            return currency;
+        }
 
         protected string currency;
         protected int amount;
+
+        public Money(int amount, string currency)
+        {
+            this.amount = amount;
+            this.currency = currency;
+        }
 
         public override bool Equals(object obj)
         {
             Money money = (Money)obj;
             return amount == money.amount
-                && GetType().Equals(money.GetType());
+                && Currency().Equals(money.Currency());
         }
 
         public static Money dollar(int amount)
@@ -29,6 +38,11 @@ namespace CurrencyCalculatorTDD
         public static Money franc(int amount)
         {
             return new Franc(amount, "CHF");
+        }
+   
+        public Money Times(int multiplier)
+        {
+            return new Money(amount * multiplier, currency);
         }
     }
 
