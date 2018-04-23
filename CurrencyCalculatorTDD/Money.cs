@@ -9,7 +9,9 @@ namespace CurrencyCalculatorTDD
     public abstract class Money
     {
         public abstract Money Times(int multiplier);
+        public abstract string Currency();
 
+        protected string currency;
         protected int amount;
 
         public override bool Equals(object obj)
@@ -21,12 +23,12 @@ namespace CurrencyCalculatorTDD
 
         public static Money dollar(int amount)
         {
-            return new Dollar(amount);
+            return new Dollar(amount, "USD");
         }
 
         public static Money franc(int amount)
         {
-            return new Franc(amount);
+            return new Franc(amount, "CHF");
         }
     }
 

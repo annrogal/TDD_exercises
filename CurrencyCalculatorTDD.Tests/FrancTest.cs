@@ -9,7 +9,7 @@ namespace CurrencyCalculatorTDD.Tests
         [TestMethod]
         public void TestFrancMultiplication()
         {
-            Money five = new Franc(5);
+            Money five = Money.franc(5);
             Assert.AreEqual(Money.franc(10), five.Times(2));
             Assert.AreEqual(Money.franc(15), five.Times(3));
         }

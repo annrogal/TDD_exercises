@@ -8,14 +8,21 @@ namespace CurrencyCalculatorTDD
 {
     public class Franc : Money
     {
-        public Franc(int amount)
+        private String currency;
+        public Franc(int amount, string currency)
         {
             this.amount = amount;
+            this.currency = currency;
         }
 
         public override Money Times(int multiplier)
         {
-            return new Franc(amount * multiplier);
+            return Money.franc(amount * multiplier);
+        }
+
+        public override string Currency()
+        {
+            return currency;
         }
     }
 }
