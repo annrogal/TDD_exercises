@@ -21,5 +21,14 @@ namespace CurrencyCalculatorTDD.Tests
             Assert.AreEqual(Money.dollar(15), five.Times(3));
         }
 
+        public void TestSimpleAddition()
+        {
+            Money five = Money.dollar(5);
+            Expression sum = five.Plus(five);
+            Bank bank = new Bank();
+            Money reduced = bank.reduce(sum, "USD");
+            Assert.AreEqual(Money.dollar(10), reduced);
+        }
+
     }
 }

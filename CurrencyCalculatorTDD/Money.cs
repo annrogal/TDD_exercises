@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CurrencyCalculatorTDD
 {
-    public class Money
+    public class Money: Expression
     {
 
         public string Currency()
@@ -44,6 +44,13 @@ namespace CurrencyCalculatorTDD
         {
             return new Money(amount * multiplier, currency);
         }
+
+        public Expression Plus(Money addend)
+        {
+            return new Money(amount + addend.amount, currency);
+        }
+
+        
     }
 
 }
